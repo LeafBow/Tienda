@@ -1,0 +1,181 @@
+*
+{
+    font-family: "Inter", sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+header
+{
+    
+    /*Altura definida a 152px*/
+    height: 152px;
+    background-color: #ff3b3c;
+    display: flex;
+    justify-content: center;
+}
+.container-header
+{
+    
+    width: 1220px;
+    
+}
+.search
+{
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    padding-top: 20px;
+    margin-top: 10px;
+}
+.logo
+{
+    display: flex;
+    justify-content: flex-start;
+}
+.search .form
+{
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+}
+.search .form input
+{
+    height: 62px;
+    border-radius: 14px;
+    border:none;
+    width: 505px;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+}
+.search .social
+{
+    display: flex;
+    justify-content: center;
+}
+.search .social ul
+{
+    display: flex;
+    justify-content: flex-end;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.search .social ul li
+{
+    padding: 0 10px;
+}
+.search .social ul li a i{
+    color: white;
+    font-size: 25px;
+}
+.nav
+{
+    padding-top: 20px;
+}
+.nav ul
+{
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.nav ul li a
+{
+    color: white;
+    font-weight: 700;
+    text-align: left;
+    text-decoration: none;
+
+}
+.nav ul li a:hover
+{
+    text-decoration:  underline;
+}
+.nav-icon
+{
+    display: none;
+}
+section
+{
+    
+    height: 340px;
+    
+}
+#hero
+{
+    background: url('../assets/hero_bg.png');
+    background-size: cover; 
+    background-position: top center;
+}
+
+
+
+.columns-container
+{ 
+    flex:1;
+    display: flex;
+    justify-content: space-around;
+    gap:20px;    
+}
+
+
+
+footer
+{
+    border: 1px solid purple;
+    /*Altura minina que se puede expandir*/
+    min-height: 368px;
+    background-color: #7525a7;
+   
+}
+footer .container-footer
+{
+    display: flex;
+    flex-direction: column;
+    width: 1220px;
+    margin: 0 auto;
+    padding: 0 auto 0 auto;
+   
+}
+ footer .columns-container
+{ 
+    flex:1;
+    display: flex;
+    justify-content: space-between;
+}
+.columns-container ul
+{
+    padding: 0;
+    list-style: none;
+}
+.columns-container ul li
+{
+    padding: 10px;
+}
+.columns-container ul li a
+{
+    color: white;
+    text-decoration: none;
+   
+}
+.columns-container .main-item
+{
+    font-weight: 700;
+    padding-bottom: 20px;
+}
+.copyright
+{
+    color: white;
+    text-align: center;
+    font-weight: 700;
+    padding-top: 30px;
+    border-top: 1px solid #ba53fb;
+
+
+}
