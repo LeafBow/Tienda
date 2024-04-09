@@ -222,7 +222,37 @@ main
 {
     margin-right: 10px;
 }
+.checkout-process .top {
+    display: flex; /* Alinea el input y el botón horizontalmente */
+    margin-bottom: 10px; /* Espacio debajo del grupo superior */
+  }
+.checkout-process .top input {
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    width: 62px;
+    margin-right: 10px;
+    padding: 0 10px 0 20px;
+    box-sizing: border-box;
+  }
+.btn-primary {
+    width: 100%;
+    background: #ff3b3c;
+    color: white;
+    font-weight: bold;
+    border: none;
+    height: 40px;
+    border-radius: 10px;
+  }
 
+.btn-outline {
+    width: 100%;
+    border: 1px solid #ff3b3c;
+    color: #ff3b3c;
+    font-weight: bold;
+    height: 40px;
+    border-radius: 10px;
+  }
 footer
 {
     border: 1px solid purple;

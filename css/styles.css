@@ -39,18 +39,19 @@
         display: flex;
         justify-content: flex-start;
     }
-    .search .form
+    .search form
     {
         box-sizing: border-box;
         display: flex;
         justify-content: center;
+        width: 100%;
     }
     .search .form input
     {
         height: 62px;
         border-radius: 14px;
         border:none;
-        width: 505px;
+        width: 100%;
         padding: 20px;
         box-sizing: border-box;
         text-align: center;
