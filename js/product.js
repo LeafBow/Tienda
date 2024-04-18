@@ -71,3 +71,39 @@
 // console.log(prod4.getSupplier);
 
 // Actividad Venda de productos
+
+class Product
+{
+    constructor(id, title, price, stock, images, onsale){
+        this._id = id;
+        this._title = title;
+        this._price = price;
+        this._stock = stock;
+        this._images = images;
+        this._onsale = onsale;
+    }
+
+    sellUnits(units)
+    {
+        if(this._stock>=units)
+        {
+            this._stock -= units;
+        }
+        else
+        {
+            console.log("No hay suficiente stock")
+        }
+        
+    }
+
+}
+
+let prod5 = new Product('id002','pan',1,12,"https://th.bing.com/th/id/OIP.d-zNWc9hB05nn0sO6_42EgHaHa?rs=1&pid=ImgDetMain",true);
+console.log(prod5._stock);
+
+prod5.sellUnits(10);
+console.log(prod5._stock);
+
+prod5.sellUnits(5);
+console.log(prod5._stock);
+
