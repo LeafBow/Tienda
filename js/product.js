@@ -42,30 +42,32 @@
 
 // Actividad Set & Get
 
-class Product 
-{
-    constructor(id, title, price, stock, images, onsale,supplier)
-    {
-        this._id = id;
-        this._title = title;
-        this._price = price;
-        this._stock = stock;
-        this._images = images;
-        this._onsale = onsale;
-        this._supplier = supplier;
-    }
-    get getSupplier()
-    {
-        return this._supplier;
-    }
-    set setSupplier(newName)
-    {
-        this._supplier = newName;
-    }
-}
+// class Product 
+// {
+//     constructor(id, title, price, stock, images, onsale,supplier)
+//     {
+//         this._id = id;
+//         this._title = title;
+//         this._price = price;
+//         this._stock = stock;
+//         this._images = images;
+//         this._onsale = onsale;
+//         this._supplier = supplier;
+//     }
+//     get getSupplier()
+//     {
+//         return this._supplier;
+//     }
+//     set setSupplier(newName)
+//     {
+//         this._supplier = newName;
+//     }
+// }
 
-let prod4 = new Product('id003','gaseosa', 2, 5, "#", true,"Luis.SAC");
+// let prod4 = new Product('id003','gaseosa', 2, 5, "#", true,"Luis.SAC");
 
-console.log(prod4.getSupplier);
-prod4.setSupplier = "PedroSAC"
-console.log(prod4.getSupplier);
+// console.log(prod4.getSupplier);
+// prod4.setSupplier = "PedroSAC"
+// console.log(prod4.getSupplier);
+
+// Actividad Venda de productos
