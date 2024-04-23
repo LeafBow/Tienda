@@ -111,3 +111,6 @@ const products = [prod1,prod2,prod3,prod4];
 console.log(products);
 console.log(products[1]);
 console.log(products[products.length-1])
+products.unshift(prod5);
+products.push(prod6);
+console.log(products);
