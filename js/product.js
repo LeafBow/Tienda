@@ -97,13 +97,17 @@ class Product
     }
 
 }
+const prod1 = new Product('id001');
+const prod2 = new Product('id002','agua',1.5);
+const prod3 = new Product('id003','pan',1,4,"https://th.bing.com/th/id/OIP.d-zNWc9hB05nn0sO6_42EgHaHa?rs=1&pid=ImgDetMain",true);
+const prod4 = new Product('id004','gaseosa', 2, 5, "#", true,"Luis.SAC");
+const prod5 = new Product('id005','pan',1,12,"https://th.bing.com/th/id/OIP.d-zNWc9hB05nn0sO6_42EgHaHa?rs=1&pid=ImgDetMain",true);
+const prod6 = new Product('id006','galleta',2,5,0,true);
 
-let prod5 = new Product('id002','pan',1,12,"https://th.bing.com/th/id/OIP.d-zNWc9hB05nn0sO6_42EgHaHa?rs=1&pid=ImgDetMain",true);
-console.log(prod5._stock);
 
-prod5.sellUnits(10);
-console.log(prod5._stock);
 
-prod5.sellUnits(5);
-console.log(prod5._stock);
+const products = [prod1,prod2,prod3,prod4];
 
+console.log(products);
+console.log(products[1]);
+console.log(products[products.length-1])
