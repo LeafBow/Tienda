@@ -13,6 +13,9 @@ header {
   justify-content: center;
 }
 .container-header {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  gap: 20px;
   width: 1220px;
 }
 .search {
@@ -20,14 +23,15 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
   padding-top: 20px;
   margin-top: 10px;
 }
 .logo {
   display: flex;
   justify-content: flex-start;
+}
+.search .form {
+  width: 30%;
 }
 .search form {
   box-sizing: border-box;
@@ -63,7 +67,7 @@ header {
   font-size: 25px;
 }
 .nav {
-  padding-top: 20px;
+  padding: 0 20px 0 20px;
 }
 .nav ul {
   display: flex;
@@ -79,7 +83,7 @@ header {
   text-decoration: none;
 }
 .nav ul li a:hover {
-  text-decoration: underline;
+  color: #7525a7;
 }
 .nav-icon {
   display: none;
@@ -142,6 +146,9 @@ main {
   overflow: hidden;
   text-decoration: none;
   color: black;
+}
+.product-card:hover {
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.445);
 }
 .product-img {
   width: 100%;
