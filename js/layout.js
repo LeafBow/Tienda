@@ -4,7 +4,7 @@ navbarSelector.appendChild(uList);
 
 const options =
 [
-    { title: 'Ofertas de la semana', linkTo: './outlet.html'},
+    { title: 'Ofertas', linkTo: './outlet.html'},
     {title: 'Como Comprar',linkTo:'./how.html'},
     {title: 'Costos y tarifas',linkTo:'./taxs.html'},
     {title: 'Mis pedidos',linkTo:'./orders1.html'},
@@ -25,13 +25,12 @@ const footerSelector = document.querySelector('#footer');
 
 const optionsFooter =
 [
-    {opt: ["ofertas","laptops","Audio","Auriculares"]},
-    {opt: ["como comprar","formas de pago","envios","devoluciones"]},
-    {opt: ["costos y tarifas","impuestos","facturacion"]},
-    {opt: ["mis pedidos","pedir nuevamente","lista de deseos"]},
-    {opt: ["garantia"]},
+    {opt: ["Ofertas","laptops","Audio","Auriculares"]},
+    {opt: ["Como comprar","formas de pago","envios","devoluciones"]},
+    {opt: ["Costos y tarifas","impuestos","facturacion"]},
+    {opt: ["Mis pedidos","pedir nuevamente","lista de deseos"]},
+    {opt: ["Garantia"]},
 ]
-console.log(optionsFooter[0].opt[0].length);
 
 for(let index of optionsFooter)
 {
