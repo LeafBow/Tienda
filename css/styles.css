@@ -148,7 +148,9 @@ main {
   color: black;
 }
 .product-card:hover {
+  /* Da un fondo difuminado  */
   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.445);
+  /* levanta un poco el product-card */
   transform: translateY(-5px);
   transition: 0.5s;
 }
