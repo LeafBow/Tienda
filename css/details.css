@@ -137,6 +137,7 @@ main {
   object-fit: contain;
   object-position: center;
 }
+
 .product-description-block * {
   display: flex;
   flex-direction: column;
@@ -165,6 +166,10 @@ main {
 }
 .product-checkout-block {
   height: auto;
+}
+.precio-container {
+  display: flex;
+  gap: 10px;
 }
 .product-checkout-block .checkout-container {
   background-color: #ececec;

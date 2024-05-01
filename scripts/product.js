@@ -110,3 +110,51 @@
 // products.unshift(prod5);
 // products.push(prod6);
 // console.log(products);
+
+class Product {
+  static _id = 1;
+  constructor(name, color, price, discount) {
+    this._id = Product._id++;
+    this._name = name;
+    this._color = color;
+    this._price = price;
+    this._discount = discount;
+    this._finalPrice = this._price - (this.price * discount) / 100;
+  }
+  get name() {
+    return this._name;
+  }
+  set name(name) {
+    this._name = name;
+  }
+
+  get color() {
+    return this._color;
+  }
+  set color(color) {
+    this._color = color;
+  }
+
+  get price() {
+    return this._price;
+  }
+  set price(price) {
+    this._price = price;
+  }
+}
+const productTitle = document.getElementById("productTitle");
+const productos = [
+  "Macbook Pro",
+  "Apple TV",
+  "Iphone",
+  "Ipad Pro",
+  "Apple Watch",
+  "AirPods",
+];
+const prod1 = new Product(
+  productos[
+    (Math.floor(Math.random() * productos.length), "Space Gray", "$750.00", "")
+  ]
+);
+
+console.log(prod1);
