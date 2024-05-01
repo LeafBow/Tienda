@@ -221,6 +221,45 @@ main {
   height: 40px;
   border-radius: 10px;
 }
+
+.sales-block {
+  padding: 20px;
+  width: 100%;
+}
+.sales-block > h1 {
+  text-align: center;
+  padding: 20px;
+}
+.blocks-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  place-content: end;
+}
+
+.sales-block .block {
+  display: flex;
+  flex-direction: column;
+
+  background-color: #f0f0f0;
+  padding-bottom: 10px;
+  border-radius: 10px 10px 0 0;
+  overflow: hidden;
+}
+.sales-block .block .img-container {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 10px 10px 0 0;
+}
+.sales-block .block img {
+  width: 100%;
+  height: auto;
+}
+
+.block .titulo {
+  display: flex;
+  flex-direction: column;
+}
 footer {
   border: 1px solid purple;
   /*Altura minina que se puede expandir*/
