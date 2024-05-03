@@ -6,7 +6,6 @@
 }
 
 header {
-  /*Altura definida a 152px*/
   height: 152px;
   background-color: #ff3b3c;
   display: flex;
@@ -197,7 +196,7 @@ main {
 footer {
   border: 1px solid purple;
   /*Altura minina que se puede expandir*/
-  min-height: 368px;
+  min-height: 260px;
   background-color: #7525a7;
 }
 .container-footer {

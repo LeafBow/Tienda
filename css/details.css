@@ -243,6 +243,7 @@ main {
   padding-bottom: 10px;
   border-radius: 10px;
   overflow: hidden;
+  background-color: #f0f0f0;
 }
 .sales-block .block .img-container {
   width: 100%;
@@ -256,23 +257,43 @@ main {
 }
 .block .words-container {
   height: 10%;
-  background-color: #f0f0f0;
+
   padding: 20px;
   border-radius: 0 0 10px 10px;
+}
+.taxes {
+  font-size: 11px;
 }
 
 .block .titulo {
   display: flex;
   flex-direction: column;
 }
+.block .color {
+  font-size: 12px;
+}
+.price-container {
+  padding: 10px 0 10px 0;
+  display: flex;
+  justify-content: space-between;
+}
+.block .price {
+  font-weight: bold;
+  font-size: 20px;
+}
+.price-container .discount {
+  color: green;
+  font-weight: 600;
+}
 
 footer {
   border: 1px solid purple;
   /*Altura minina que se puede expandir*/
-  min-height: 368px;
+  min-height: 260px;
   background-color: #7525a7;
   display: flex;
   justify-content: center;
+  padding: 20px;
 }
 footer .container-footer {
   display: flex;

@@ -140,7 +140,13 @@
               </ul>
               <div class="checkout-process">
                 <div class="top">
-                  <input type="number" value="1" id="objetos" />
+                  <input
+                    type="number"
+                    value="1"
+                    id="objetos"
+                    onchange="validNumber()"
+                    min="1"
+                  />
                   <button class="btn-primary">Comprar</button>
                 </div>
                 <div class="bottom">
@@ -160,8 +166,11 @@
               <div class="words-container">
                 <h2 class="titulo">Kindle <span>Paperwhite</span></h2>
                 <p class="color">Black</p>
-                <p class="price">$320</p>
-                <p class="discount">20% Off</p>
+                <div class="price-container">
+                  <p class="price">$320</p>
+                  <p class="discount">20% Off</p>
+                </div>
+
                 <p class="taxes">NoTaxes</p>
               </div>
             </div>
@@ -172,8 +181,10 @@
               <div class="words-container">
                 <h2 class="titulo">Kindle <span>Paperwhite</span></h2>
                 <p class="color">Black</p>
-                <p class="price">$320</p>
-                <p class="discount">20% Off</p>
+                <div class="price-container">
+                  <p class="price">$320</p>
+                  <p class="discount">20% Off</p>
+                </div>
                 <p class="taxes">NoTaxes</p>
               </div>
             </div>
@@ -184,8 +195,10 @@
               <div class="words-container">
                 <h2 class="titulo">Kindle <span>Paperwhite</span></h2>
                 <p class="color">Black</p>
-                <p class="price">$320</p>
-                <p class="discount">20% Off</p>
+                <div class="price-container">
+                  <p class="price">$320</p>
+                  <p class="discount">20% Off</p>
+                </div>
                 <p class="taxes">NoTaxes</p>
               </div>
             </div>

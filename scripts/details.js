@@ -4,7 +4,12 @@ function changeMini(event) {
   bigImgSelector.src = miniImg;
   console.log(bigImgSelector);
 }
-
+function validNumber() {
+  let numero = parseFloat(document.getElementById("objetos").value);
+  if (numero < 0) {
+    document.getElementById("objetos").value = 0;
+  }
+}
 // Seleccionar todos los elementos con la clase "miniImg"
 const elementos = document.getElementsByClassName("miniImg");
 const elementos2 = document.getElementsByClassName("Img2");
@@ -27,6 +32,11 @@ const numObjetos = document.getElementById("objetos");
 
 numObjetos.addEventListener("input", function () {
   const valorImput = Number(numObjetos.value);
-  changeSubtotal(valorImput);
+  if (valorImput >= 0) {
+    changeSubtotal(valorImput);
+  } else {
+    return 0;
+  }
+
   console.log(valorImput);
 });
