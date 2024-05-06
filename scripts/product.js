@@ -113,13 +113,24 @@
 
 class Product {
   static _id = 1;
-  constructor(name, color, price, discount) {
+  constructor(image, name, color, price = 0, discount, taxes) {
+    this._image = image;
     this._id = Product._id++;
     this._name = name;
     this._color = color;
     this._price = price;
     this._discount = discount;
-    this._finalPrice = this._price - (this.price * discount) / 100;
+    this._finalPrice = this._price - (this._price * this._discount) / 100;
+    this._taxes = taxes;
+  }
+  get id() {
+    return this._id;
+  }
+  get image() {
+    return this._image;
+  }
+  set image(image) {
+    this._image = image;
   }
   get name() {
     return this._name;
@@ -136,25 +147,62 @@ class Product {
   }
 
   get price() {
-    return this._price;
+    return this._finalPrice;
   }
   set price(price) {
     this._price = price;
   }
+  get discount() {
+    return this._discount;
+  }
+  set discount(discount) {
+    this._discount = discount;
+  }
+  get taxes() {
+    return this._taxes;
+  }
 }
 const productTitle = document.getElementById("productTitle");
-const productos = [
-  "Macbook Pro",
-  "Apple TV",
-  "Iphone",
-  "Ipad Pro",
-  "Apple Watch",
-  "AirPods",
-];
-const prod1 = new Product(
-  productos[
-    (Math.floor(Math.random() * productos.length), "Space Gray", "$750.00", "")
-  ]
-);
+const productos = {
+  imgs: [
+    "../assets/Products_assets/macbook_pro.jpeg",
+    "./assets/Products_assets/apple_tv.jpeg",
+    "./assets/Products_assets/iphone.jpeg",
+    "./assets/Products_assets/ipad_pro.jpeg",
+    "./assets/Products_assets/apple_watch.jpeg",
+    "./assets/Products_assets/airpods.jpeg",
+  ],
+  names: [
+    "Macbook Pro",
+    "Apple TV",
+    "Iphone",
+    "Ipad Pro",
+    "Apple Watch",
+    "AirPods",
+  ],
+  colors: ["DarkBlue", "Orange"],
+};
 
-console.log(prod1);
+function productoRandom(productos) {
+  let index = Math.floor(Math.random() * productos.names.length);
+  let nombre = productos.names[index];
+  let color =
+    productos.colors[Math.floor(Math.random() * productos.colors.length)];
+  let price = Math.floor(Math.random() * 500) + 50; // Precio aleatorio entre 50 y 550
+  let discount = Math.floor(Math.random() * 30); // Descuento aleatorio entre 0 y 29
+  let taxes = Math.random() < 0.5 ? 0 : Math.floor(Math.random() * 10); // Impuestos aleatorios entre 0 y 9, con un 50% de probabilidad de ser 0
+  return new Product(
+    productos.imgs[index],
+    nombre,
+    color,
+    price,
+    discount,
+    taxes
+  );
+}
+let productosArray = [];
+for (let i = 0; i < 6; i++) {
+  let nuevoProducto = productoRandom(productos);
+  productosArray.push(nuevoProducto);
+}
+console.log(productosArray[0]);

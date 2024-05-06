@@ -49,3 +49,13 @@ for (let index of optionsFooter) {
     li_col.appendChild(anchor);
   }
 }
+function toggleNavbar() {
+  if (window.innerWidth <= 768) {
+    navbarSelector.style.display = "none";
+  }
+}
+toggleNavbar();
+window.addEventListener("resize", () => {
+  toggleNavbar();
+  //console.log(window.innerWidth);
+});
