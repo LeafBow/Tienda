@@ -165,6 +165,7 @@ class Product {
 const productTitle = document.getElementById("productTitle");
 const productos = {
   imgs: [
+    "../assets/mock1.jpg",
     "../assets/Products_assets/macbook_pro.jpeg",
     "./assets/Products_assets/apple_tv.jpeg",
     "./assets/Products_assets/iphone.jpeg",
@@ -173,6 +174,7 @@ const productos = {
     "./assets/Products_assets/airpods.jpeg",
   ],
   names: [
+    "Mackboock Pro 13'4",
     "Macbook Pro",
     "Apple TV",
     "Iphone",
@@ -205,4 +207,3 @@ for (let i = 0; i < 6; i++) {
   let nuevoProducto = productoRandom(productos);
   productosArray.push(nuevoProducto);
 }
-console.log(productosArray[0]);

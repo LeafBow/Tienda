@@ -112,7 +112,7 @@
 // </a>
 // `;
 function createCard(product) {
-  return `<a class="product-card" href="./details.html">
+  return `<a class="product-card" href="./details.html?id=${product.id}">
   <img
     src="${product.image}"
     alt="${product.id}"
