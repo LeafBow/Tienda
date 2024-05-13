@@ -122,6 +122,10 @@ class Product {
     this._discount = discount;
     this._finalPrice = this._price - (this._price * this._discount) / 100;
     this._taxes = taxes;
+    this.calculateFinalPrice();
+  }
+  calculateFinalPrice() {
+    this._finalPrice = this._price - (this._price * this._discount) / 100;
   }
   get id() {
     return this._id;
@@ -151,10 +155,13 @@ class Product {
   }
   set price(price) {
     this._price = price;
+    this.calculateFinalPrice(); // Recalcula el precio final cuando se cambia el precio base
   }
-  get discount() {
-    return this._discount;
+  set discount(discount) {
+    this._discount = discount;
+    this.calculateFinalPrice(); // Recalcula el precio final cuando se cambia el descuento
   }
+
   set discount(discount) {
     this._discount = discount;
   }
@@ -163,28 +170,77 @@ class Product {
   }
 }
 const productTitle = document.getElementById("productTitle");
-const productos = {
-  imgs: [
-    "../assets/mock1.jpg",
-    "../assets/Products_assets/macbook_pro.jpeg",
-    "./assets/Products_assets/apple_tv.jpeg",
-    "./assets/Products_assets/iphone.jpeg",
-    "./assets/Products_assets/ipad_pro.jpeg",
-    "./assets/Products_assets/apple_watch.jpeg",
-    "./assets/Products_assets/airpods.jpeg",
-  ],
-  names: [
-    "Mackboock Pro 13'4",
-    "Macbook Pro",
-    "Apple TV",
-    "Iphone",
-    "Ipad Pro",
-    "Apple Watch",
-    "AirPods",
-  ],
-  colors: ["DarkBlue", "Orange"],
-};
-
+// const productos = {
+//   imgs: [
+//     "../assets/mock1.jpg",
+//     "../assets/Products_assets/macbook_pro.jpeg",
+//     "./assets/Products_assets/apple_tv.jpeg",
+//     "./assets/Products_assets/iphone.jpeg",
+//     "./assets/Products_assets/ipad_pro.jpeg",
+//     "./assets/Products_assets/apple_watch.jpeg",
+//     "./assets/Products_assets/airpods.jpeg",
+//   ],
+//   names: [
+//     "Mackboock Pro 13'4",
+//     "Macbook Pro",
+//     "Apple TV",
+//     "Iphone",
+//     "Ipad Pro",
+//     "Apple Watch",
+//     "AirPods",
+//   ],
+//   colors: ["DarkBlue", "Orange"],
+// };
+const productos = [
+  {
+    nombre: "Mackboock Pro 13'4",
+    imgs: "../assets/mock1.jpg",
+    color: ["green", "red", "DarkCyan"],
+    price: 600,
+    discount: 20,
+    taxes: 5,
+  },
+  {
+    nombre: "AirPods",
+    imgs: "./assets/Products_assets/airpods.jpeg",
+    color: ["green", "red", "DarkCyan"],
+    price: 300,
+    discount: 5,
+    taxes: 5,
+  },
+  {
+    nombre: "Apple TV",
+    imgs: "./assets/Products_assets/apple_tv.jpeg",
+    color: ["green", "red", "DarkCyan"],
+    price: 700,
+    discount: 10,
+    taxes: 5,
+  },
+  {
+    nombre: "Iphone",
+    imgs: "./assets/Products_assets/iphone.jpeg",
+    color: ["green", "red", "DarkCyan"],
+    price: 500,
+    discount: 0,
+    taxes: 5,
+  },
+  {
+    nombre: "Ipad Pro",
+    imgs: "./assets/Products_assets/ipad_pro.jpeg",
+    color: ["green", "red", "DarkCyan"],
+    price: 350,
+    discount: 15,
+    taxes: 5,
+  },
+  {
+    nombre: "Apple Watch",
+    imgs: "./assets/Products_assets/apple_watch.jpeg",
+    color: ["green", "red", "DarkCyan"],
+    price: 250,
+    discount: 5,
+    taxes: 5,
+  },
+];
 function productoRandom(productos) {
   let index = Math.floor(Math.random() * productos.names.length);
   let nombre = productos.names[index];

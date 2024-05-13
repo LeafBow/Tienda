@@ -23,20 +23,20 @@ function converCursor(element) {
 
 converCursor(elementos);
 converCursor(elementos2);
-let precio = document.getElementById("precio");
-const subprecio = Number(precio.innerHTML);
-function changeSubtotal(objetos) {
-  precio.innerHTML = subprecio * objetos;
-}
-const numObjetos = document.getElementById("objetos");
+// let precio = document.getElementById("precio");
+// const subprecio = Number(precio.innerHTML);
+// function changeSubtotal(objetos) {
+//   precio.innerHTML = subprecio * objetos;
+// }
+// const numObjetos = document.getElementById("objetos");
 
-numObjetos.addEventListener("input", function () {
-  const valorImput = Number(numObjetos.value);
-  if (valorImput >= 0) {
-    changeSubtotal(valorImput);
-  } else {
-    return 0;
-  }
+// numObjetos.addEventListener("input", function () {
+//   const valorImput = Number(numObjetos.value);
+//   if (valorImput >= 0) {
+//     changeSubtotal(valorImput);
+//   } else {
+//     return 0;
+//   }
 
-  console.log(valorImput);
-});
+//   console.log(valorImput);
+// });
