@@ -32,7 +32,7 @@ const captureText = () => {
     }
 
     console.log(array2);
-  }, 500); // 300 milisegundos (0.3 segundos) de retraso antes de ejecutar la función captureText
+  }, 50); // 300 milisegundos (0.3 segundos) de retraso antes de ejecutar la función captureText
   printCards(array2, "products");
 };
 

@@ -112,21 +112,26 @@
 // </a>
 // `;
 function createCard(product) {
-  return `<a class="product-card" href="./details.html?id=${product.id}">
+  const { id, image, name, color, price, discount, taxes } = product;
+  return `<a class="product-card" href="./details.html?id=${id}">
   <img
-    src="${product.image}"
-    alt="${product.id}"
+    src="${image}"
+    alt="${id}"
     class="product-img"
   />
   <div class="product-info">
-    <span class="product-title"> ${product.name} </span>
-    <span class="product-description"> ${product.color} </span>
+    <span class="product-title"> ${name} </span>
+    <span class="product-description"> ${color} </span>
     <div class="product-price-block">
-      <span class="product-price"> ${product.price} </span>
-      <span class="product-discount"> ${product.discount} </span>
+      <span class="product-price">$${price} </span>
+      <span class="product-discount"> ${
+        discount > 0
+          ? `<span class="product-discount">${discount}% Off</span>`
+          : ""
+      } </span>
     </div>
     <div class="product-tax-policy">
-      ${product.taxes}
+      ${taxes}
     </div>
   </div>
 </a>`;

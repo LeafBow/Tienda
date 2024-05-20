@@ -157,9 +157,8 @@ class Product {
     this._price = price;
     this.calculateFinalPrice(); // Recalcula el precio final cuando se cambia el precio base
   }
-  set discount(discount) {
-    this._discount = discount;
-    this.calculateFinalPrice(); // Recalcula el precio final cuando se cambia el descuento
+  get discount() {
+    return this._discount;
   }
 
   set discount(discount) {
@@ -170,31 +169,11 @@ class Product {
   }
 }
 const productTitle = document.getElementById("productTitle");
-// const productos = {
-//   imgs: [
-//     "../assets/mock1.jpg",
-//     "../assets/Products_assets/macbook_pro.jpeg",
-//     "./assets/Products_assets/apple_tv.jpeg",
-//     "./assets/Products_assets/iphone.jpeg",
-//     "./assets/Products_assets/ipad_pro.jpeg",
-//     "./assets/Products_assets/apple_watch.jpeg",
-//     "./assets/Products_assets/airpods.jpeg",
-//   ],
-//   names: [
-//     "Mackboock Pro 13'4",
-//     "Macbook Pro",
-//     "Apple TV",
-//     "Iphone",
-//     "Ipad Pro",
-//     "Apple Watch",
-//     "AirPods",
-//   ],
-//   colors: ["DarkBlue", "Orange"],
-// };
+
 const productos = [
   {
     nombre: "Mackboock Pro 13'4",
-    imgs: "../assets/mock1.jpg",
+    imgs: ["../assets/mock1.jpg"],
     color: ["green", "red", "DarkCyan"],
     price: 600,
     discount: 20,
@@ -202,7 +181,7 @@ const productos = [
   },
   {
     nombre: "AirPods",
-    imgs: "./assets/Products_assets/airpods.jpeg",
+    imgs: ["./assets/Products_assets/airpods.jpeg"],
     color: ["green", "red", "DarkCyan"],
     price: 300,
     discount: 5,
@@ -210,7 +189,7 @@ const productos = [
   },
   {
     nombre: "Apple TV",
-    imgs: "./assets/Products_assets/apple_tv.jpeg",
+    imgs: ["./assets/Products_assets/apple_tv.jpeg"],
     color: ["green", "red", "DarkCyan"],
     price: 700,
     discount: 10,
@@ -218,7 +197,7 @@ const productos = [
   },
   {
     nombre: "Iphone",
-    imgs: "./assets/Products_assets/iphone.jpeg",
+    imgs: ["./assets/Products_assets/iphone.jpeg"],
     color: ["green", "red", "DarkCyan"],
     price: 500,
     discount: 0,
@@ -226,7 +205,7 @@ const productos = [
   },
   {
     nombre: "Ipad Pro",
-    imgs: "./assets/Products_assets/ipad_pro.jpeg",
+    imgs: ["./assets/Products_assets/ipad_pro.jpeg"],
     color: ["green", "red", "DarkCyan"],
     price: 350,
     discount: 15,
@@ -234,32 +213,25 @@ const productos = [
   },
   {
     nombre: "Apple Watch",
-    imgs: "./assets/Products_assets/apple_watch.jpeg",
+    imgs: ["./assets/Products_assets/apple_watch.jpeg"],
     color: ["green", "red", "DarkCyan"],
     price: 250,
     discount: 5,
     taxes: 5,
   },
 ];
-function productoRandom(productos) {
-  let index = Math.floor(Math.random() * productos.names.length);
-  let nombre = productos.names[index];
-  let color =
-    productos.colors[Math.floor(Math.random() * productos.colors.length)];
-  let price = Math.floor(Math.random() * 500) + 50; // Precio aleatorio entre 50 y 550
-  let discount = Math.floor(Math.random() * 30); // Descuento aleatorio entre 0 y 29
-  let taxes = Math.random() < 0.5 ? 0 : Math.floor(Math.random() * 10); // Impuestos aleatorios entre 0 y 9, con un 50% de probabilidad de ser 0
-  return new Product(
-    productos.imgs[index],
-    nombre,
-    color,
-    price,
-    discount,
-    taxes
-  );
-}
+
 let productosArray = [];
 for (let i = 0; i < 6; i++) {
-  let nuevoProducto = productoRandom(productos);
+  let randomNumer = Math.floor(Math.random() * 3);
+  let nuevoProducto = new Product(
+    productos[i].imgs[0],
+    productos[i].nombre,
+    productos[i].color[randomNumer],
+    productos[i].price,
+    productos[i].discount,
+    productos[i].taxes
+  );
   productosArray.push(nuevoProducto);
+  console.log(productos[i].nombre);
 }
