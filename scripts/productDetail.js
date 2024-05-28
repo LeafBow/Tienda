@@ -152,13 +152,17 @@ function saveProduct(id) {
     productosCart = [];
     productosCart.push(product);
   } else {
-    productosCart.push(product);
-    console.log(productosCart);
+    let cartProducts = JSON.parse(localStorage.getItem("cart"));
+    console.log(cartProducts);
   }
+
+  productosCart.push(product);
+  console.log(productosCart);
 
   const stringifyProduct = JSON.stringify(productosCart);
   localStorage.setItem("cart", stringifyProduct);
 }
+
 const addProduct = document.getElementById("add");
 addProduct.addEventListener("click", () => saveProduct(id));
 numObjetos.addEventListener("input", () => changePrice(id));

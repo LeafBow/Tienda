@@ -174,7 +174,7 @@ const productos = [
   {
     nombre: "Mackboock Pro 13'4",
     imgs: ["../assets/mock1.jpg"],
-    color: ["green", "red", "DarkCyan"],
+    color: ["Green", "Red", "DarkCyan"],
     price: 600,
     discount: 20,
     taxes: 5,
@@ -182,7 +182,7 @@ const productos = [
   {
     nombre: "AirPods",
     imgs: ["./assets/Products_assets/airpods.jpeg"],
-    color: ["green", "red", "DarkCyan"],
+    color: ["Green", "Red", "DarkCyan"],
     price: 300,
     discount: 5,
     taxes: 5,
@@ -190,7 +190,7 @@ const productos = [
   {
     nombre: "Apple TV",
     imgs: ["./assets/Products_assets/apple_tv.jpeg"],
-    color: ["green", "red", "DarkCyan"],
+    color: ["Green", "Red", "DarkCyan"],
     price: 700,
     discount: 10,
     taxes: 5,
@@ -198,7 +198,7 @@ const productos = [
   {
     nombre: "Iphone",
     imgs: ["./assets/Products_assets/iphone.jpeg"],
-    color: ["green", "red", "DarkCyan"],
+    color: ["Green", "Red", "DarkCyan"],
     price: 500,
     discount: 0,
     taxes: 5,
@@ -206,7 +206,7 @@ const productos = [
   {
     nombre: "Ipad Pro",
     imgs: ["./assets/Products_assets/ipad_pro.jpeg"],
-    color: ["green", "red", "DarkCyan"],
+    color: ["Green", "Red", "DarkCyan"],
     price: 350,
     discount: 15,
     taxes: 5,
@@ -214,7 +214,7 @@ const productos = [
   {
     nombre: "Apple Watch",
     imgs: ["./assets/Products_assets/apple_watch.jpeg"],
-    color: ["green", "red", "DarkCyan"],
+    color: ["Green", "Red", "DarkCyan"],
     price: 250,
     discount: 5,
     taxes: 5,
@@ -233,5 +233,5 @@ for (let i = 0; i < 6; i++) {
     productos[i].taxes
   );
   productosArray.push(nuevoProducto);
-  console.log(productos[i].nombre);
+
 }
