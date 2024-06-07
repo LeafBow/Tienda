@@ -233,5 +233,4 @@ for (let i = 0; i < 6; i++) {
     productos[i].taxes
   );
   productosArray.push(nuevoProducto);
-
 }
