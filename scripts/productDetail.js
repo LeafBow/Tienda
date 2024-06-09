@@ -56,27 +56,40 @@ function printDetails(id) {
   </p>`;
   const imgsTemplate = `
   <div class="thumbnail-container">
-  <img
+   <img
     class="miniImg"
-    src="./assets/mock1.jpg"
+    src=${product.image[0]}
     alt="MacBoockPro13'4-1"
     onclick="changeMini(event)"
   />
   <img
     class="miniImg"
-    src="./assets/mock2.jpg"
+    src=${product.image[1]}
+    alt="MacBoockPro13'4-1"
+    onclick="changeMini(event)"
+  />
+  <img
+    class="miniImg"
+    src=${product.image[2]}
     alt="MacBoockPro13'4-2"
     onclick="changeMini(event)"
   />
   </div>
-  <img id="bigIMG" src="${product.image}" alt="" />
+  <img id="bigIMG" src="${product.image[0]}" alt="" />
   </div>
   `;
   const checkoutTemplate = `<div class="checkout-container">
   <span> Total: </span>
   <div class="precio-container">
-    <h2>$</h2>
-    <h2 id="precio">${product.price}</h2>
+    ${
+      product.discount > 0
+        ? `<div class="precio2">
+        <h2 class="price-0">Precio: </h2><span>$${product.price}</span></div>
+          <h2 id="precio">$${product.finalPrice}</h2>
+          `
+        : `<h2 id="precio">$${product.finalPrice}</h2>`
+    }
+    
   </div>
 
   <p>
