@@ -118,10 +118,10 @@ function printDetails(id) {
         type="number"
         value="1"
         id="objetos"
-        onchange="validNumber()"
+        
         min="1"
       />
-      <button class="btn-primary">Comprar</button>
+      <button class="btn-primary" id ="buy">Comprar</button>
     </div>
     <div class="bottom">
       <button class="btn-outline" id="add">Añadir al Carrito</button>
@@ -140,42 +140,78 @@ printDetails(id);
 const numObjetos = document.getElementById("objetos");
 function changePrice(id) {
   const priceAux = document.getElementById("precio");
-  const producto = productosArray.find((each) => each.id == id);
-  console.log("changepriceid: " + id);
-  let precio = producto.price;
-  let newPrice = precio * numObjetos.value;
-  priceAux.innerHTML = newPrice;
-  console.log(newPrice);
-  console.log(producto.price);
-}
-let productosCart = [];
-function saveProduct(id) {
-  const found = productosArray.find((each) => each.id == id);
-  console.log(found);
-  const product = {
-    id: id,
-    title: found.name,
-    price: found.price,
-    image: found.image,
-    color: document.querySelector("#color").value,
-    quantity: document.querySelector("#objetos").value,
-  };
 
-  if (localStorage.getItem("cart") == null) {
-    productosCart = [];
-    productosCart.push(product);
+  const producto = productosArray.find((each) => each.id == id);
+
+  if (producto.discount > 0) {
+    let precio = producto.finalPrice;
+    let newPrice = precio * numObjetos.value;
+    priceAux.innerHTML = `$${newPrice}`;
   } else {
-    let cartProducts = JSON.parse(localStorage.getItem("cart"));
-    console.log(cartProducts);
+    let precio = producto.price;
+    let newPrice = precio * numObjetos.value;
+    priceAux.innerHTML = `$${newPrice}`;
+  }
+}
+function saveProduct(id) {
+  const product = productosArray.find((each) => each.id == id);
+  let $price = product.discount > 0 ? product.finalPrice : product.price;
+  let $quantity = parseInt(document.getElementById("objetos").value);
+  let $color = document.getElementById("color").value;
+  let productArray = [
+    {
+      id: product.id,
+      name: product.name,
+      price: $price,
+      quantity: $quantity,
+      color: $color,
+      img: product.image[0],
+    },
+  ];
+
+  //Obtenemos valores del localStorage si existe
+  const retrievedArray = JSON.parse(localStorage.getItem("cart"));
+  if (retrievedArray) {
+    for (let index of retrievedArray) {
+      if (
+        index.id != productArray[0].id ||
+        index.color != productArray[0].color
+      ) {
+        productArray.push(index);
+        //Convertimos el array a una cadena JSON
+        const jsonString = JSON.stringify(productArray);
+        localStorage.setItem("cart", jsonString);
+        console.log(productArray);
+      } else {
+        productArray[0].quantity += index.quantity;
+        //Convertimos el array a una cadena JSON
+        const jsonString = JSON.stringify(productArray);
+        localStorage.setItem("cart", jsonString);
+        console.log(productArray);
+      }
+    }
+  } else {
+    //Convertimos el array a una cadena JSON
+    const jsonString = JSON.stringify(productArray);
+    //Guardamos la cadena JSON en el localStorage
+    localStorage.setItem("cart", jsonString);
   }
 
-  productosCart.push(product);
-  console.log(productosCart);
-
-  const stringifyProduct = JSON.stringify(productosCart);
-  localStorage.setItem("cart", stringifyProduct);
+  //Convertimos el array a una cadena JSON
+  const jsonString = JSON.stringify(productArray);
 }
-
+function clearLocalStorage() {
+  localStorage.clear();
+}
+const clear = document.getElementById("buy");
 const addProduct = document.getElementById("add");
 addProduct.addEventListener("click", () => saveProduct(id));
 numObjetos.addEventListener("input", () => changePrice(id));
+clear.addEventListener("click", () => clearLocalStorage());
+
+// window.addEventListener("load", () => {
+//   console.log(
+//     "Local storage on page load:",
+//     JSON.parse(localStorage.getItem("cart"))
+//   );
+// });

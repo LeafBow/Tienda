@@ -52,6 +52,8 @@ for (let index of optionsFooter) {
 function toggleNavbar() {
   if (window.innerWidth <= 768) {
     navbarSelector.style.display = "none";
+  } else {
+    navbarSelector.style.display = "block";
   }
 }
 toggleNavbar();
